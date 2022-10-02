@@ -1,0 +1,101 @@
+
+package Parte2_figurasgeometricas;
+class Circulo {
+    double radio;
+    Circulo(double radio){
+        this.radio=radio;
+    }
+    double calcularArea() {
+        return Math.PI*radio*radio;
+    }
+    double calcularPerimetro() {
+        return 2*Math.PI*radio;
+    }   
+}
+class Rectangulo {
+    double base;
+    double altura;
+    Rectangulo(double base, double altura) {
+        this.base = base;
+        this.altura = altura;
+    }
+    double calcularArea() {
+        return base*altura;
+    }
+    double calcularPerimetro() {
+        return (2*base)+(2*altura);
+    }
+}
+
+class cuadrado{
+    double lado;
+    cuadrado(double lado) {
+        this.lado = lado;
+    }
+    double calcularArea() {
+        return lado*lado;
+    }
+    double calcularPerimetro(){
+        return (4*lado);
+    }
+}
+class trianguloRectangulo{
+    double base, altura;
+    trianguloRectangulo(double base, double altura) {
+        this.base = base;
+        this.altura = altura;
+    }
+    double calcularArea(){
+        return (base * altura / 2);
+    }
+    double calcularPerimetro(){
+        return (base + altura+calcularHipotenusa());
+    }
+    double calcularHipotenusa(){
+        return Math.pow(base * base + altura * altura, 1/2);
+    }
+    public String determinarTipoDeTriangulo(){
+        String respuesta;
+        if ((base == altura) && (base == calcularHipotenusa()) && (altura == calcularHipotenusa())){
+            respuesta = "Es un triangulo equilatero";
+        }
+        else if ((base != altura) && (base != calcularHipotenusa()) && (altura != calcularHipotenusa())){
+            respuesta = "Es un triangulo escaleno";
+        }
+        else {
+            respuesta = ("Es un triangulo isosceles");
+        }
+        return respuesta;
+    }
+}
+
+class rombo{
+    double diagonal_mayor, diagonal_menor, lado;
+    rombo(double diagonal_mayor, double diagonal_menor, double lado){
+        this.diagonal_mayor = diagonal_mayor;
+        this.diagonal_menor = diagonal_menor;
+        this.lado = lado;
+    }
+    double calcularArea(){
+        return (diagonal_mayor*diagonal_menor)/2;
+    }
+    double calcularPerimetro(){
+        return 4*lado;
+    }
+}
+
+class trapecio{
+    double base_menor, base_mayor, altura, lado;
+    trapecio(double base_mayor, double base_menor, double altura, int i){
+        this.base_mayor = base_mayor;
+        this.base_menor = base_menor;
+        this.altura = altura;
+        this.lado = lado;
+    }
+    double calcularArea(){
+        return ((base_mayor + base_menor)*altura)/2;
+    }
+    double calcularPerimetro(){
+        return base_mayor + base_menor + (2*lado);
+    }
+}
