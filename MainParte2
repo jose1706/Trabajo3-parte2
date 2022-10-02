@@ -1,0 +1,8 @@
+
+package Parte2_figurasgeometricas;
+public class MainParte2 {
+    public static void main(String[] args) {
+        Ventana_figuras v1 = new Ventana_figuras();
+        v1.setVisible(true);
+    }   
+}
